@@ -1,0 +1,9 @@
+title: 이창민의 개발 블로그
+description: 소프트웨어공학 학기 프로젝트 개발 기록
+lang: ko
+timezone: Asia/Seoul
+theme: minima
+author:
+  name: 이창민
+github_username: lcm98872-design
+permalink: /:year/:month/:day/:title/
