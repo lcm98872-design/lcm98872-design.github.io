@@ -62,7 +62,7 @@ PDF 표를 과목 단위로 엑셀로 옮겨 정리하고, 서비스의 DB에 �
 1. PDF 표를 과목 단위로 엑셀에 정리
 2. 엑셀을 CSV로 변환
 3. CSV를 GitHub에 업로드
-4. CSV를 서비스 DB에 적재
+4. CSV를 서비스 DB에 저장
 
 <style>
 .data-scroll{max-height:380px;overflow:auto;border:1px solid #ddd;border-radius:6px;margin:.5rem 0 1rem}
