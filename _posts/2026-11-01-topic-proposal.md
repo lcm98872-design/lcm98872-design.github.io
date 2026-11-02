@@ -3,13 +3,25 @@ layout: post
 title: "[1편] 주제 제안: 이수학점 관리 웹서비스"
 ---
 
-## 한 줄 소개
+<style>
+.post-content{line-height:1.9}
+.post-content h2{margin-top:3.2rem;margin-bottom:1.2rem}
+.post-content h3{margin-top:2.4rem;margin-bottom:1rem}
+.post-content p{margin-bottom:1.2rem}
+.post-content li{margin-bottom:.6rem}
+.post-content ul,.post-content ol{margin-top:.8rem;margin-bottom:1.4rem}
+.post-content table{margin:1.4rem 0 2rem}
+.post-content table td,.post-content table th{padding:.6rem .8rem;line-height:1.7}
+.post-content hr{margin:3rem 0}
+</style>
+
+## 1. 한 줄 소개
 
 **부경대 공대생이 들은 과목을 체크하면 졸업까지 남은 요건을 진단하고, 학기별 수강 계획 초안을 만들어 주는 이수학점 관리 웹서비스.**
 
 ---
 
-## 누가 쓰나
+## 2. 누가 쓰나
 
 **국립부경대학교 공과대학 학생**이 쓴다.
 
@@ -44,7 +56,7 @@ title: "[1편] 주제 제안: 이수학점 관리 웹서비스"
 
 ---
 
-## 데이터를 어떻게 확보했나
+## 3. 데이터를 어떻게 확보했나
 
 이 서비스는 학교 교육과정과 졸업요건 데이터가 있어야 돌아가기 때문에 공식 PDF 자료를 직접 엑셀로 옮겨 정리했다.
 
@@ -90,7 +102,7 @@ details.data-box summary{cursor:pointer;font-weight:600;padding:.3rem 0}
 
 ---
 
-## 무엇을 만드나
+## 4. 무엇을 만드나
 
 이수해야 할 과목을 **학기별 계획으로 세우고, 그 계획을 고치는 과정을 편하게** 만들어 준다. 지금까지 들은 과목, 앞으로 들을 과목, 아직 부족한 요건이 **한 화면에 한눈에** 보인다.
 
@@ -106,7 +118,7 @@ details.data-box summary{cursor:pointer;font-weight:600;padding:.3rem 0}
 
 ---
 
-## 이번 학기에 어디까지 할 것인가
+## 5. 이번 학기에 어디까지 할 것인가
 
 | 우선순위 | 기능 | 목표 |
 |---|---|---|
@@ -117,7 +129,7 @@ details.data-box summary{cursor:pointer;font-weight:600;padding:.3rem 0}
 
 ---
 
-## 어떻게 평가할 것인가
+## 6. 어떻게 평가할 것인가
 
 공과대학 학생을 대상으로 **관찰 평가와 설문 평가**를 한다. 관찰 평가는 어디서 막히는지 찾기 위해, 설문 평가는 더 많은 사람의 반응을 보기 위해 한다.
 
