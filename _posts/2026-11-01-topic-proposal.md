@@ -57,12 +57,12 @@ title: "[1편] 주제 제안: 이수학점 관리 웹서비스"
 
 ### 정리한 데이터
 
-PDF 표를 과목 단위로 엑셀로 옮겨 정리하고, 서비스의 DB에 넣기 위해 CSV로 바꿔 GitHub에 올렸다.
+PDF 표를 과목 단위로 엑셀로 옮겨 정리하고, Supabase(PostgreSQL) 데이터베이스에 넣기 위해 CSV로 바꿔 GitHub에 올렸다.
 
 1. PDF 표를 과목 단위로 엑셀에 정리
 2. 엑셀을 CSV로 변환
 3. CSV를 GitHub에 업로드
-4. CSV를 서비스 DB에 저장
+4. CSV를 Supabase 데이터베이스에 저장
 
 <style>
 .data-scroll{max-height:380px;overflow:auto;border:1px solid #ddd;border-radius:6px;margin:.5rem 0 1rem}
