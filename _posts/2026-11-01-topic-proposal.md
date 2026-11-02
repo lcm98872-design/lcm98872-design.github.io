@@ -55,6 +55,30 @@ title: "[1편] 주제 제안: 이수학점 관리 웹서비스"
 
 ※ 모든 자료는 국립부경대학교가 공개한 2026학년도 기준 자료다.
 
+### 정리한 데이터 직접 보기
+
+PDF 표를 엑셀로 옮겨 아래처럼 **한 줄에 과목 하나**로 정리했다. 표 안에서 스크롤해 볼 수 있다.
+
+<style>
+.data-scroll{max-height:380px;overflow:auto;border:1px solid #ddd;border-radius:6px;margin:.5rem 0 1rem}
+.data-table{border-collapse:collapse;font-size:13px;width:100%;white-space:nowrap}
+.data-table th{position:sticky;top:0;background:#f3f3f3;text-align:left;padding:6px 10px;border-bottom:1px solid #ccc}
+.data-table td{padding:4px 10px;border-bottom:1px solid #eee}
+details.data-box{margin:.5rem 0}
+details.data-box summary{cursor:pointer;font-weight:600;padding:.3rem 0}
+</style>
+
+<details class="data-box" open>
+<summary>전공과목 967개 (공과대학 23개 전공)</summary>
+{% include data-major.html %}
+</details>
+
+<details class="data-box">
+<summary>교양과목 341개 (필수교양 15, 균형교양 326)</summary>
+{% include data-general.html %}
+</details>
+
+
 ## 무엇을 만드나
 
 이수해야 할 과목을 **학기별 계획으로 세우고, 그 계획을 고치는 과정을 편하게** 만들어 준다. 지금까지 들은 과목, 앞으로 들을 과목, 아직 부족한 요건이 **한 화면에 한눈에** 보인다.
