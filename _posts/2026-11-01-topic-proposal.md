@@ -67,17 +67,7 @@ title: "[1편] 주제 제안: 이수학점 관리 웹서비스"
 | 교양 이수 기준 (필수교양 9학점, 영역·역량별 1과목 이상, 최소 40학점)  | 「2026학년도 교육과정 안내서」 (16쪽) |
 | 전공별 졸업요건  | 「2026 졸업 안내」 붙임2 입학연도별 졸업소요학점 |
 
-
 ※ 모든 자료는 국립부경대학교가 공개한 2026학년도 기준 자료다.
-
-### 정리한 데이터
-
-PDF 표를 과목 단위로 엑셀로 옮겨 정리하고 Supabase 데이터베이스에 넣기 위해 CSV로 바꿔 GitHub에 올렸다.
-
-1. PDF 표를 과목 단위로 엑셀에 정리
-2. 엑셀을 CSV로 변환
-3. CSV를 GitHub에 업로드
-4. CSV를 Supabase 데이터베이스에 저장
 
 <style>
 .data-scroll{max-height:380px;overflow:auto;border:1px solid #ddd;border-radius:6px;margin:.5rem 0 1rem}
@@ -98,6 +88,14 @@ details.data-box summary{cursor:pointer;font-weight:600;padding:.3rem 0}
 {% include data-general.html %}
 </details>
 
+### 정리한 데이터
+
+PDF 표를 과목 단위로 엑셀로 옮겨 정리하고 Supabase 데이터베이스에 넣기 위해 CSV로 바꿔 GitHub에 올렸다.
+
+1. PDF 표를 과목 단위로 엑셀에 정리
+2. 엑셀을 CSV로 변환
+3. CSV를 GitHub에 업로드
+4. CSV를 Supabase 데이터베이스에 저장
 
 ---
 
