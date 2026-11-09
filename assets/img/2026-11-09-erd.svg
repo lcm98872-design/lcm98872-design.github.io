@@ -1,0 +1,206 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1520 1040" width="1520" height="1040" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR','NanumGothic','WenQuanYi Zen Hei',sans-serif">
+<rect width="1520" height="1040" fill="#ffffff"/>
+<text x="40" y="52" font-size="30" fill="#0f172a" font-weight="700" text-anchor="start">이수학점 관리 웹서비스 ERD (초안)</text>
+<text x="40" y="82" font-size="16" fill="#64748b" font-weight="400" text-anchor="start">Supabase (PostgreSQL) · 테이블 7개 · PK 기본키 / FK 외래키 / UQ 중복 불가</text>
+<rect x="20" y="108" width="1480" height="400" rx="16" fill="#f0fdfa" stroke="#99f6e4"/>
+<text x="36" y="134" font-size="16" fill="#0f766e" font-weight="700" text-anchor="start">학교 데이터  ·  교육과정 안내서에서 정리 (읽기 전용)</text>
+<rect x="320" y="520" width="900" height="500" rx="16" fill="#fffbeb" stroke="#fde68a"/>
+<text x="650" y="546" font-size="16" fill="#b45309" font-weight="700" text-anchor="start">사용자 데이터  ·  학생이 만든 계획표 (서버만 읽고 씀)</text>
+<rect x="345" y="150" width="240" height="132" rx="10" fill="#ffffff" stroke="#0f766e" stroke-width="2"/>
+<path d="M345 160 a10 10 0 0 1 10 -10 h220 a10 10 0 0 1 10 10 v32 h-240 z" fill="#0f766e"/>
+<text x="359" y="177" font-size="16" fill="#ffffff" font-weight="700" text-anchor="start">majors</text>
+<text x="571" y="177" font-size="14" fill="#e2e8f0" font-weight="400" text-anchor="end">전공</text>
+<text x="357" y="212" font-size="11" fill="#b45309" font-weight="700" text-anchor="start">PK</text>
+<text x="407" y="212" font-size="14" fill="#0f172a" font-weight="700" text-anchor="start">id</text>
+<text x="573" y="212" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<rect x="347" y="222" width="236" height="30" fill="#f8fafc"/>
+<text x="407" y="242" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">department</text>
+<text x="573" y="242" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<text x="357" y="272" font-size="11" fill="#1d4ed8" font-weight="700" text-anchor="start">UQ</text>
+<text x="407" y="272" font-size="14" fill="#0f172a" font-weight="700" text-anchor="start">name</text>
+<text x="573" y="272" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<rect x="40" y="150" width="255" height="342" rx="10" fill="#ffffff" stroke="#0f766e" stroke-width="2"/>
+<path d="M40 160 a10 10 0 0 1 10 -10 h235 a10 10 0 0 1 10 10 v32 h-255 z" fill="#0f766e"/>
+<text x="54" y="177" font-size="16" fill="#ffffff" font-weight="700" text-anchor="start">grad_requirements</text>
+<text x="281" y="177" font-size="14" fill="#e2e8f0" font-weight="400" text-anchor="end">졸업요건</text>
+<text x="52" y="212" font-size="11" fill="#b45309" font-weight="700" text-anchor="start">PK·FK</text>
+<text x="102" y="212" font-size="14" fill="#0f172a" font-weight="700" text-anchor="start">major_id</text>
+<text x="283" y="212" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<rect x="42" y="222" width="251" height="30" fill="#f8fafc"/>
+<text x="102" y="242" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">total_credits</text>
+<text x="283" y="242" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<text x="102" y="272" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">general_required</text>
+<text x="283" y="272" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<rect x="42" y="282" width="251" height="30" fill="#f8fafc"/>
+<text x="102" y="302" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">general_total</text>
+<text x="283" y="302" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<text x="102" y="332" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">major_core</text>
+<text x="283" y="332" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<rect x="42" y="342" width="251" height="30" fill="#f8fafc"/>
+<text x="102" y="362" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">major_elective</text>
+<text x="283" y="362" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<text x="102" y="392" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">major_basic_total</text>
+<text x="283" y="392" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<rect x="42" y="402" width="251" height="30" fill="#f8fafc"/>
+<text x="102" y="422" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">major_advanced</text>
+<text x="283" y="422" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<text x="102" y="452" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">free_elective</text>
+<text x="283" y="452" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<rect x="42" y="462" width="251" height="30" fill="#f8fafc"/>
+<text x="102" y="482" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">source</text>
+<text x="283" y="482" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<rect x="635" y="150" width="255" height="222" rx="10" fill="#ffffff" stroke="#0f766e" stroke-width="2"/>
+<path d="M635 160 a10 10 0 0 1 10 -10 h235 a10 10 0 0 1 10 10 v32 h-255 z" fill="#0f766e"/>
+<text x="649" y="177" font-size="16" fill="#ffffff" font-weight="700" text-anchor="start">major_courses</text>
+<text x="876" y="177" font-size="14" fill="#e2e8f0" font-weight="400" text-anchor="end">전공별 과목</text>
+<text x="647" y="212" font-size="11" fill="#b45309" font-weight="700" text-anchor="start">PK·FK</text>
+<text x="697" y="212" font-size="14" fill="#0f172a" font-weight="700" text-anchor="start">major_id</text>
+<text x="878" y="212" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<rect x="637" y="222" width="251" height="30" fill="#f8fafc"/>
+<text x="647" y="242" font-size="11" fill="#b45309" font-weight="700" text-anchor="start">PK·FK</text>
+<text x="697" y="242" font-size="14" fill="#0f172a" font-weight="700" text-anchor="start">course_id</text>
+<text x="878" y="242" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<text x="697" y="272" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">category</text>
+<text x="878" y="272" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<rect x="637" y="282" width="251" height="30" fill="#f8fafc"/>
+<text x="697" y="302" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">year</text>
+<text x="878" y="302" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<text x="697" y="332" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">semesters</text>
+<text x="878" y="332" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<rect x="637" y="342" width="251" height="30" fill="#f8fafc"/>
+<text x="697" y="362" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">source</text>
+<text x="878" y="362" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<rect x="940" y="150" width="240" height="222" rx="10" fill="#ffffff" stroke="#0f766e" stroke-width="2"/>
+<path d="M940 160 a10 10 0 0 1 10 -10 h220 a10 10 0 0 1 10 10 v32 h-240 z" fill="#0f766e"/>
+<text x="954" y="177" font-size="16" fill="#ffffff" font-weight="700" text-anchor="start">courses</text>
+<text x="1166" y="177" font-size="14" fill="#e2e8f0" font-weight="400" text-anchor="end">과목</text>
+<text x="952" y="212" font-size="11" fill="#b45309" font-weight="700" text-anchor="start">PK</text>
+<text x="1002" y="212" font-size="14" fill="#0f172a" font-weight="700" text-anchor="start">id</text>
+<text x="1168" y="212" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<rect x="942" y="222" width="236" height="30" fill="#f8fafc"/>
+<text x="1002" y="242" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">name</text>
+<text x="1168" y="242" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<text x="1002" y="272" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">credits</text>
+<text x="1168" y="272" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<rect x="942" y="282" width="236" height="30" fill="#f8fafc"/>
+<text x="1002" y="302" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">lecture_h</text>
+<text x="1168" y="302" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<text x="1002" y="332" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">lab_h</text>
+<text x="1168" y="332" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<rect x="942" y="342" width="236" height="30" fill="#f8fafc"/>
+<text x="1002" y="362" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">kind</text>
+<text x="1168" y="362" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<rect x="1230" y="150" width="255" height="222" rx="10" fill="#ffffff" stroke="#0f766e" stroke-width="2"/>
+<path d="M1230 160 a10 10 0 0 1 10 -10 h235 a10 10 0 0 1 10 10 v32 h-255 z" fill="#0f766e"/>
+<text x="1244" y="177" font-size="16" fill="#ffffff" font-weight="700" text-anchor="start">general_courses</text>
+<text x="1471" y="177" font-size="14" fill="#e2e8f0" font-weight="400" text-anchor="end">교양 정보</text>
+<text x="1242" y="212" font-size="11" fill="#b45309" font-weight="700" text-anchor="start">PK·FK</text>
+<text x="1292" y="212" font-size="14" fill="#0f172a" font-weight="700" text-anchor="start">course_id</text>
+<text x="1473" y="212" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<rect x="1232" y="222" width="251" height="30" fill="#f8fafc"/>
+<text x="1292" y="242" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">category</text>
+<text x="1473" y="242" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<text x="1292" y="272" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">competency</text>
+<text x="1473" y="272" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<rect x="1232" y="282" width="251" height="30" fill="#f8fafc"/>
+<text x="1292" y="302" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">area</text>
+<text x="1473" y="302" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<text x="1292" y="332" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">required_group</text>
+<text x="1473" y="332" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<rect x="1232" y="342" width="251" height="30" fill="#f8fafc"/>
+<text x="1292" y="362" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">note</text>
+<text x="1473" y="362" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<rect x="345" y="560" width="290" height="432" rx="10" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+<path d="M345 570 a10 10 0 0 1 10 -10 h270 a10 10 0 0 1 10 10 v32 h-290 z" fill="#b45309"/>
+<text x="359" y="587" font-size="16" fill="#ffffff" font-weight="700" text-anchor="start">plans</text>
+<text x="621" y="587" font-size="14" fill="#e2e8f0" font-weight="400" text-anchor="end">계획표</text>
+<text x="357" y="622" font-size="11" fill="#b45309" font-weight="700" text-anchor="start">PK</text>
+<text x="407" y="622" font-size="14" fill="#0f172a" font-weight="700" text-anchor="start">id</text>
+<text x="623" y="622" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<rect x="347" y="632" width="286" height="30" fill="#f8fafc"/>
+<text x="357" y="652" font-size="11" fill="#1d4ed8" font-weight="700" text-anchor="start">UQ</text>
+<text x="407" y="652" font-size="14" fill="#0f172a" font-weight="700" text-anchor="start">code</text>
+<text x="623" y="652" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<text x="357" y="682" font-size="11" fill="#1d4ed8" font-weight="700" text-anchor="start">FK</text>
+<text x="407" y="682" font-size="14" fill="#0f172a" font-weight="700" text-anchor="start">major_id</text>
+<text x="623" y="682" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<rect x="347" y="692" width="286" height="30" fill="#f8fafc"/>
+<text x="407" y="712" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">admission_year</text>
+<text x="623" y="712" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<text x="407" y="742" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">current_term</text>
+<text x="623" y="742" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<rect x="347" y="752" width="286" height="30" fill="#f8fafc"/>
+<text x="407" y="772" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">target_term</text>
+<text x="623" y="772" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<text x="407" y="802" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">max_credits</text>
+<text x="623" y="802" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<rect x="347" y="812" width="286" height="30" fill="#f8fafc"/>
+<text x="407" y="832" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">interests</text>
+<text x="623" y="832" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int[]</text>
+<text x="407" y="862" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">status</text>
+<text x="623" y="862" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<rect x="347" y="872" width="286" height="30" fill="#f8fafc"/>
+<text x="407" y="892" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">past_leaves</text>
+<text x="623" y="892" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<text x="407" y="922" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">leave_terms</text>
+<text x="623" y="922" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text[]</text>
+<rect x="347" y="932" width="286" height="30" fill="#f8fafc"/>
+<text x="407" y="952" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">created_at</text>
+<text x="623" y="952" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">timestamptz</text>
+<text x="407" y="982" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">updated_at</text>
+<text x="623" y="982" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">timestamptz</text>
+<rect x="940" y="600" width="255" height="252" rx="10" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+<path d="M940 610 a10 10 0 0 1 10 -10 h235 a10 10 0 0 1 10 10 v32 h-255 z" fill="#b45309"/>
+<text x="954" y="627" font-size="16" fill="#ffffff" font-weight="700" text-anchor="start">plan_items</text>
+<text x="1181" y="627" font-size="14" fill="#e2e8f0" font-weight="400" text-anchor="end">계획 항목</text>
+<text x="952" y="662" font-size="11" fill="#b45309" font-weight="700" text-anchor="start">PK</text>
+<text x="1002" y="662" font-size="14" fill="#0f172a" font-weight="700" text-anchor="start">id</text>
+<text x="1183" y="662" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<rect x="942" y="672" width="251" height="30" fill="#f8fafc"/>
+<text x="952" y="692" font-size="11" fill="#1d4ed8" font-weight="700" text-anchor="start">FK</text>
+<text x="1002" y="692" font-size="14" fill="#0f172a" font-weight="700" text-anchor="start">plan_id</text>
+<text x="1183" y="692" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<text x="1002" y="722" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">status</text>
+<text x="1183" y="722" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<rect x="942" y="732" width="251" height="30" fill="#f8fafc"/>
+<text x="1002" y="752" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">term</text>
+<text x="1183" y="752" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<text x="952" y="782" font-size="11" fill="#1d4ed8" font-weight="700" text-anchor="start">FK</text>
+<text x="1002" y="782" font-size="14" fill="#0f172a" font-weight="700" text-anchor="start">course_id</text>
+<text x="1183" y="782" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int (null)</text>
+<rect x="942" y="792" width="251" height="30" fill="#f8fafc"/>
+<text x="1002" y="812" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">slot_type</text>
+<text x="1183" y="812" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">text</text>
+<text x="1002" y="842" font-size="14" fill="#0f172a" font-weight="400" text-anchor="start">slot_credits</text>
+<text x="1183" y="842" font-size="12" fill="#64748b" font-weight="400" text-anchor="end">int</text>
+<path d="M295 207.0 H345" fill="none" stroke="#334155" stroke-width="2"/>
+<rect x="293" y="182.0" width="28" height="20" rx="4" fill="#334155"/><text x="307" y="197.0" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle">1</text>
+<rect x="319" y="182.0" width="28" height="20" rx="4" fill="#334155"/><text x="333" y="197.0" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle">1</text>
+<path d="M585 207.0 H635" fill="none" stroke="#334155" stroke-width="2"/>
+<rect x="583" y="182.0" width="28" height="20" rx="4" fill="#334155"/><text x="597" y="197.0" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle">1</text>
+<rect x="609" y="182.0" width="28" height="20" rx="4" fill="#334155"/><text x="623" y="197.0" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle">N</text>
+<path d="M940 207.0 H915 V237.0 H890" fill="none" stroke="#334155" stroke-width="2"/>
+<rect x="914" y="182.0" width="28" height="20" rx="4" fill="#334155"/><text x="928" y="197.0" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle">1</text>
+<rect x="888" y="240.0" width="28" height="20" rx="4" fill="#334155"/><text x="902" y="255.0" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle">N</text>
+<path d="M1180 207.0 H1230" fill="none" stroke="#334155" stroke-width="2"/>
+<rect x="1178" y="182.0" width="28" height="20" rx="4" fill="#334155"/><text x="1192" y="197.0" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle">1</text>
+<rect x="1196" y="211.0" width="30" height="20" rx="4" fill="#334155"/><text x="1211" y="226.0" font-size="11" fill="#ffffff" font-weight="700" text-anchor="middle">0..1</text>
+<path d="M465 282 V560" fill="none" stroke="#334155" stroke-width="2"/>
+<rect x="469" y="285" width="28" height="20" rx="4" fill="#334155"/><text x="483" y="300" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle">1</text>
+<rect x="469" y="535" width="28" height="20" rx="4" fill="#334155"/><text x="483" y="550" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle">N</text>
+<path d="M635 617.0 H780 V687.0 H940" fill="none" stroke="#334155" stroke-width="2"/>
+<rect x="636" y="592.0" width="28" height="20" rx="4" fill="#334155"/><text x="650" y="607.0" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle">1</text>
+<rect x="911" y="662.0" width="28" height="20" rx="4" fill="#334155"/><text x="925" y="677.0" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle">N</text>
+<path d="M1060 372 V600" fill="none" stroke="#334155" stroke-width="2"/>
+<rect x="1064" y="375" width="28" height="20" rx="4" fill="#334155"/><text x="1078" y="390" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle">1</text>
+<rect x="1066" y="578" width="36" height="20" rx="4" fill="#334155"/><text x="1084" y="593" font-size="11" fill="#ffffff" font-weight="700" text-anchor="middle">0..N</text>
+<rect x="1240" y="540" width="260" height="250" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+<text x="1258" y="572" font-size="15" fill="#0f172a" font-weight="700">읽는 법</text>
+<text x="1258" y="604" font-size="13" fill="#475569" font-weight="400">· plan_items 한 줄은</text>
+<text x="1272" y="630" font-size="13" fill="#475569" font-weight="400">과목 1개 또는 빈 칸 1개</text>
+<text x="1258" y="656" font-size="13" fill="#475569" font-weight="400">· course_id와 slot_type 중</text>
+<text x="1272" y="682" font-size="13" fill="#475569" font-weight="400">하나만 채운다</text>
+<text x="1258" y="708" font-size="13" fill="#475569" font-weight="400">· 같은 과목도 전공마다</text>
+<text x="1272" y="734" font-size="13" fill="#475569" font-weight="400">이수구분이 달라서</text>
+<text x="1272" y="760" font-size="13" fill="#475569" font-weight="400">major_courses로 나눴다</text>
+</svg>
