@@ -31,7 +31,11 @@ title: "[2편] 데이터 설계: ERD 초안"
 
 ## 2. ERD
 
-![이수학점 관리 웹서비스 ERD](/assets/img/2026-11-09-erd.svg)
+<div style="max-height:620px;overflow:auto;border:1px solid #e2e8f0;border-radius:8px;">
+<img src="/assets/img/2026-11-09-erd.svg" alt="이수학점 관리 웹서비스 ERD" style="width:1520px;max-width:none;border:0;border-radius:0;display:block;">
+</div>
+
+<p style="margin-top:.6rem;">🔍 <a href="/assets/img/2026-11-09-erd.svg" target="_blank" rel="noopener">ERD 크게 보기 (새 창)</a> · 상자 안에서 위아래·좌우로 스크롤해서 볼 수 있다.</p>
 
 ---
 
