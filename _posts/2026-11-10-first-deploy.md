@@ -51,12 +51,45 @@ title: "[3편] 첫 배포: 구성 선택과 Docker"
 
 ![Docker Desktop에서 leechangmin 실행 중](/assets/img/2026-11-10-docker-desktop.png)
 
-### 바꾼 것
+### 바꾸기 전과 후
 
-1. **DB 연결 방식을 바꿨다.** 처음 코드는 Supabase 전용 방식(supabase-js)으로 DB에 접속해서, 그냥 PostgreSQL인 `db` 컨테이너에는 붙지 않았다. 그래서 PostgreSQL 주소 하나(`DATABASE_URL`)로 접속하도록 바꿨다. 이제 같은 코드가 로컬에서는 `db` 컨테이너에, 배포에서는 Supabase에 붙는다.
-2. **비밀값은 이미지 밖에 두었다.** DB 주소에는 비밀번호가 들어 있다. 이미지나 GitHub에 넣지 않고, 실행할 때 환경 변수로 넣는다.
-3. **데이터는 컨테이너 밖에 두었다.** DB 데이터는 볼륨에 저장해서 컨테이너를 지워도 남는다.
-4. **이미지를 작게 만들었다.** 빌드 단계와 실행 단계를 나눠서 실행 이미지에는 결과물만 넣었다. 베이스 이미지는 버전을 고정했다(latest 안 씀).
+| 항목 | 전 | 후 |
+|---|---|---|
+| 내 컴퓨터에서 실행 | Node.js 설치 → `npm install` → `.env.local`에 키 3개 입력 → `npm run dev` | Docker Desktop 켜고 `docker compose up -d --build` 한 줄 |
+| 로컬 DB | 없음. 내 컴퓨터에서도 인터넷의 Supabase에 붙음 | 내 컴퓨터 안의 `db` 컨테이너 (PostgreSQL 16) |
+| DB에 데이터 넣기 | Supabase SQL Editor에 SQL 파일 5개를 하나씩 붙여 넣고 Run | `db` 컨테이너가 처음 뜰 때 5개를 순서대로 자동 실행 |
+| DB 접속 방법 | Supabase 전용 도구(supabase-js)로 표 이름과 칸 이름을 지정해서 요청 | SQL을 직접 써서 PostgreSQL에 요청 |
+| 필요한 비밀값 | 3개 (`SUPABASE_URL`, `PUBLISHABLE_KEY`, `SECRET_KEY`) | 1개 (`DATABASE_URL`) |
+| 저장 | 계획표 저장과 과목 저장을 따로 요청. 중간에 실패하면 계획표만 남을 수 있음 | 둘을 한 번에(트랜잭션) 저장. 하나라도 실패하면 둘 다 취소 |
+| 파일 위치 | SQL은 `supabase/`, 원본 데이터는 `db/`, 강의 PDF는 맨 위 | `db/sql/`, `db/csv/`, `강의자료/`로 정리 |
+
+### 왜 DB 접속 방법까지 바꿨나
+
+Docker의 `db` 컨테이너는 Supabase가 아니라 그냥 PostgreSQL이다. Supabase 전용 도구는 Supabase에만 붙을 수 있어서, 로컬 `db` 컨테이너에는 접속하지 못했다. 그래서 어디서나 쓸 수 있는 PostgreSQL 주소 방식으로 바꿨다.
+
+예를 들어 계획표 하나를 불러오는 코드는 이렇게 바뀌었다.
+
+| 전 | 후 |
+|---|---|
+| `db.from("plans").select("*").eq("code", code)` | ``sql`select * from plans where code = ${code}` `` |
+
+이제 주소만 바꾸면 같은 코드가 로컬에서는 `db` 컨테이너에, 배포에서는 Supabase에 붙는다.
+
+### 새로 만든 파일
+
+| 파일 | 하는 일 |
+|---|---|
+| `Dockerfile` | `web` 이미지 설계도. 패키지 설치 → 빌드 → 실행, 세 단계로 나눠서 실행 이미지에는 결과물만 넣는다 |
+| `compose.yaml` | `db`와 `web`을 한 번에 띄운다. `db`가 준비된 뒤에 `web`이 뜬다 |
+| `.dockerignore` | 비밀값 파일(`.env`)과 필요 없는 파일이 이미지에 들어가지 않게 막는다 |
+| `lib/db.ts` | `DATABASE_URL`로 PostgreSQL에 접속한다 |
+
+### 강의 체크리스트로 확인한 것
+
+1. 베이스 이미지 버전 고정: `node:22.23-alpine`, `postgres:16.11-alpine` (latest 안 씀)
+2. 비밀값이 파일에 없는가: DB 주소는 Vercel 환경 변수에만 넣었다
+3. 데이터가 컨테이너 밖에 있는가: `db` 데이터는 볼륨에 저장해서 컨테이너를 지워도 남는다
+4. 내 컴퓨터에서 열리는가: `localhost:3000`에서 계획을 만들고 저장까지 확인했다
 
 ---
 
