@@ -89,6 +89,28 @@ title: "[4편] 회고: 첫 배포 이후 무엇을 바꿨나"
 
 그리고 "처음 계획 세우기"와 "졸업요건 점검하기"를 **"수강 계획 세우기"** 하나로 합쳤다. 두 기능이 결국 같은 일을 하고 있었다.
 
+<h3 id="erd-update">바뀐 ERD</h3>
+
+2편의 ERD 초안에서 테이블이 7개에서 9개로 늘었다. 바뀐 곳은 주황색 NEW로 표시했다.
+
+<div style="max-height:620px;overflow:auto;border:1px solid #e2e8f0;border-radius:8px;">
+<img src="/assets/img/2026-11-17-erd.svg" alt="이수학점 관리 웹서비스 ERD (2026-11-17 기준)" style="width:1520px;max-width:none;border:0;border-radius:0;display:block;">
+</div>
+
+<p style="margin-top:.6rem;">🔍 <a href="/assets/img/2026-11-17-erd.svg" target="_blank" rel="noopener">ERD 크게 보기 (새 창)</a> · 상자 안에서 위아래·좌우로 스크롤해서 볼 수 있다.</p>
+
+| 바뀐 곳 | 왜 |
+|---|---|
+| `users` 테이블 추가 | 로그인. 아이디·부를 이름·비밀번호 해시만 저장한다 |
+| `sessions` 테이블 추가 | 로그인 상태 유지. 쿠키에 넣은 무작위 값의 해시만 저장한다 |
+| `plans.user_id` 추가 (users와 1:N) | 계획을 만든 사람만 열고 저장할 수 있게 |
+| `plans.title` 추가 | 계획 이름 (내 계획 목록에 보이는 이름) |
+| `plans.term_max` 추가 | 학기마다 다른 최대 학점 (예: `{"2027-1": 21}`) |
+
+`plans.code`는 남겨 뒀다. 코드로 불러오는 기능은 없앴지만, 지금도 계획 주소(`/plan/코드`)에 쓰인다.
+
+전공이 3개에서 23개로 늘어난 건 테이블 구조가 아니라 데이터만 바뀐 것이라 ERD는 그대로다.
+
 ---
 
 ## 5. 화면 다시 짜기

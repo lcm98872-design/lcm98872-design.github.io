@@ -37,6 +37,8 @@ title: "[2편] 데이터 설계: ERD 초안"
 
 <p style="margin-top:.6rem;">🔍 <a href="/assets/img/2026-11-09-erd.svg" target="_blank" rel="noopener">ERD 크게 보기 (새 창)</a> · 상자 안에서 위아래·좌우로 스크롤해서 볼 수 있다.</p>
 
+> **업데이트 (11/17)**: 이 ERD는 처음 그린 초안이다. 그 뒤 로그인을 붙이면서 `users`, `sessions` 테이블과 `plans`의 칸 3개가 추가돼 지금은 테이블 9개다. 바뀐 ERD는 [4편](/2026/11/13/retrospective/#erd-update)에 있다.
+
 ---
 
 ## 3. 테이블
